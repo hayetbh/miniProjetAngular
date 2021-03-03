@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="alert alert-danger" *ngIf="emailvalide"   role="alert">
+            <strong>merci de verifier votre email !</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="alert alert-danger" *ngIf="passvalide"   role="alert">
+            <strong>merci de verifier votre mot de passe!</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="account-wall">
+            <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                alt="">
+            <form class="form-signin" (ngSubmit)="onSubmit(f)" #f="ngForm" >
+              <b> Username : </b> 
+            <input type="text" ngModel #login="ngModel" name="username" class="form-control" placeholder="Email" required >
+            <p *ngIf="login.invalid && login.touched" class="text-danger" >le champs nom est obligatoire </p>
+            <br>
+             <b>Mot de passe :</b>
+            <input type="password" ngModel #password="ngModel" name="password" class="form-control" placeholder="Password" required>
+            <p *ngIf="password.invalid && password.touched" class="text-danger" >le champs nom est obligatoire </p>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" [disabled]="f.invalid" type="submit">
+                Sign in</button>
+            <label class="checkbox pull-left">
+                <input type="checkbox" value="remember-me">
+                Remember me
+            </label>
+            <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+            </form>
+        </div>
+        <a routerLink="/inscription_candidat" class="text-center new-account">Create an account </a>
+    </div>
+</div>
+<br>
+<br>

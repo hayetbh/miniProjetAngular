@@ -1,0 +1,111 @@
+<app-menu-admin></app-menu-admin>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+<div id=""  class="col-md-8">
+    <div class="alert alert-success" *ngIf="message_valide"  role="alert">
+        <strong>enregistrement effectué avec succès!</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">FORMULAIRE D'INSCRIPTION Formateur</div>
+        </div>  
+        <div class="panel-body" >
+            <form  class="form-horizontal"  (ngSubmit)="onSubmit(f)" #f="ngForm" >
+
+                <div class="form-group">
+                    <label for="Nom_Candidat" class="col-md-3 control-label">Nom</label>
+                    <div class="col-md-9">
+                        
+                        <input ngModel type="text" #nom_formateur="ngModel" class="form-control" name="nom_formateur"  placeholder="Votre Nom"  required>
+                        <p *ngIf="nom_formateur.invalid && nom_formateur.touched" class="text-danger" >le champs nom est obligatoire </p>
+                    </div>
+                </div>
+            
+                    
+                <div class="form-group">
+                    <label for="Prenom_Candidat" class="col-md-3 control-label">Prenom</label>
+                    <div class="col-md-9">
+                        <input ngModel type="text" #prenom_Formateur="ngModel" class="form-control" name="prenom_Formateur" placeholder="Votre Prenom"  required>
+                        <p *ngIf="prenom_Formateur.invalid && prenom_Formateur.touched" class="text-danger" >le champs prenom est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Email_Candidat" class="col-md-3 control-label">Email</label>
+                    <div class="col-md-9">
+                        <input type="email" [email]="true" ngModel #email_Formateur="ngModel" class="form-control" name="email_Formateur" placeholder="Votre Email"  required>
+                        <p *ngIf="email_Formateur.invalid && email_Formateur.touched" class="text-danger" >le champs email est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Tel_Candidat" class="col-md-3 control-label">Telephone</label>
+                    <div class="col-md-9">
+                        <input type="number" ngModel #tel_Formateur="ngModel" class="form-control" name="tel_Formateur" placeholder="Votre Numero de Télephone"  required>
+                        <p *ngIf="tel_Formateur.invalid && tel_Formateur.touched" class="text-danger" >le champs telephone est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">Cin</label>
+                    <div class="col-md-9">
+                        <input type="text" ngModel #cin_Formateur="ngModel" class="form-control" name="cin_Formateur" placeholder="Votre Numero de Cin"  required>
+                        <p *ngIf="cin_Formateur.invalid && cin_Formateur.touched" class="text-danger" >le champs cin est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">Tarif par heure</label>
+                    <div class="col-md-9">
+                        <input type="number" ngModel #Tarif_par_h="ngModel" class="form-control" name="Tarif_par_h" placeholder=""  required>
+                        <p *ngIf="Tarif_par_h.invalid && Tarif_par_h.touched" class="text-danger" >ce champs  est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">spécialité</label>
+                    <div class="col-md-9">
+                        <input type="text" ngModel #specialite="ngModel" class="form-control" name="specialite" placeholder=""  required>
+                        <p *ngIf="specialite.invalid && specialite.touched" class="text-danger" >ce champs  est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">Mot de passe</label>
+                    <div class="col-md-9">
+                        <input type="password" ngModel #mot_de_passe="ngModel" class="form-control" name="mot_de_passe" placeholder=""  required>
+                        <p *ngIf="mot_de_passe.invalid && mot_de_passe.touched" class="text-danger" >ce champs  est obligatoire </p>
+                    </div>
+                </div>
+              <!-- <div class="form-group">
+                    <label  for="Photo_Candidat" class="col-md-3 control-label">Photo</label >
+                    <div class="col-md-9">
+                        <input type="file" id="" class="form-control" name="Photo_Candidat" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cv_Candidat" class="col-md-3 control-label">Cv</label>
+                    <div class="col-md-9">
+                        <input type="file" id="" class="form-control" name="Cv_Candidat" ngModel>
+                    </div>
+                </div>--> 
+              
+
+                <div class="form-group">
+                    <!-- Button -->                                        
+                    <div class="col-md-offset-3 col-md-9">
+                        <button [disabled]="f.invalid" type="submit" class="btn btn-success col-md-12"><i class="icon-hand-right"></i>Enregistrer</button>
+                        
+                    </div>
+                </div>
+            </form>
+         </div>
+    </div>
+
+
+
+
+</div> 
+<div class="col-md-2"></div>
+</div>
+<br>
+<br>

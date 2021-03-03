@@ -1,0 +1,70 @@
+<app-menu-admin></app-menu-admin>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <div class="panel-title"></div>
+    </div>  
+    <div class="panel-body" >
+        <form  class="form-horizontal"  (ngSubmit)="onSubmit(f)" #f="ngForm" >
+
+            <div class="form-group">
+                <label for="Prenom_Candidat" class="col-md-3 control-label">Nom de formateur</label>
+                <div class="col-md-9">
+                    <select #nomform="ngModel" name="nomform" class="form-control form-control-sm" ngModel>
+                        <option *ngFor="let formateur of formateurs"  value={{formateur.id}}>{{formateur.name}}</option>
+                      </select>
+                   
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Prenom_Candidat" class="col-md-3 control-label">Formation</label>
+                <div class="col-md-9">
+                    <select #listeform="ngModel" name="listeform"  class="form-control form-control-sm" ngModel>
+                        <option *ngFor="let format of formations" value={{format.id}}>{{format.Titre}}</option>
+                      </select>
+                   
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-3 control-label">Description</label>
+                <div class="col-md-9">
+                    <textarea  ngModel name="planing"   class="form-control" #planing="ngModel" required></textarea>
+                 
+                    <p *ngIf="planing.invalid && planing.touched" class="text-danger" >le champs prenom est obligatoire </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Prenom_Candidat" class="col-md-3 control-label">Date debut</label>
+                <div class="col-md-9">
+                    <input type="date" ngModel name="date_debut"   class="form-control" #date_debut="ngModel" placeholder="" required>
+                    <p *ngIf="date_debut.invalid && date_debut.touched" class="text-danger" >le champs prenom est obligatoire </p>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <label for="Prenom_Candidat" class="col-md-3 control-label">Date fin</label>
+                <div class="col-md-9">
+                    <input type="date" ngModel name="date_fin"  class="form-control" #date_fin="ngModel" placeholder="" required>
+                    <p *ngIf="date_fin.invalid && date_fin.touched" class="text-danger" >le champs prenom est obligatoire </p>
+                </div>
+            </div>
+            
+
+
+            <div class="form-group">
+                <!-- Button -->                                        
+                <div class="col-md-offset-3 col-md-9">
+                    <button [disabled]="f.invalid" type="submit" class="btn btn-success col-md-12"><i class="icon-hand-right"></i>Enregistrer</button>
+                    
+                </div>
+            </div>
+        </form>
+     </div>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>

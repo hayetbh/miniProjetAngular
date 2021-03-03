@@ -1,0 +1,111 @@
+<app-menu-admin></app-menu-admin>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    
+
+<div id=""  class="col-md-8">
+    <div class="alert alert-success" *ngIf="message_valide"  role="alert">
+        <strong>enregistrement effectué avec succès!</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">FORMULAIRE AJOUTER FORAMATION</div>
+        </div>  
+        <div class="panel-body" >
+            <form  class="form-horizontal"  (ngSubmit)="onSubmit(f)" #f="ngForm" >
+
+                <div class="form-group">
+                    <label for="Nom_Candidat" class="col-md-3 control-label">Titre</label>
+                    <div class="col-md-9">
+                        
+                        <input ngModel type="text" #titre="ngModel" class="form-control" name="Titre"  placeholder="Votre Titre"  required>
+                        <p *ngIf="titre.invalid && titre.touched" class="text-danger" >le champs nom est obligatoire </p>
+                    </div>
+                </div>
+            
+                    
+                <div class="form-group">
+                    <label for="description" class="col-md-3 control-label">Description</label>
+                    <div class="col-md-9">
+                        <textarea  ngModel rows="4" cols="50" #description="ngModel" class="form-control" name="Description"  required></textarea>
+                        <p *ngIf="description.invalid && description.touched" class="text-danger" >le champs prenom est obligatoire </p>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="charge_Horaire" class="col-md-3 control-label">Charge Horaire</label>
+                    <div class="col-md-9">
+                        <input type="number" ngModel #charge_Horaire="ngModel" class="form-control" name="Charge_Horaire" placeholder="Votre Numero de Télephone"  required>
+                        <p *ngIf="charge_Horaire.invalid && charge_Horaire.touched" class="text-danger" >le champs telephone est obligatoire </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">Difficulte</label>
+                    <div class="col-md-9">
+                        <select name="difficulte" ngModel #difficulte="ngModel" class="form-control">
+                            <option value="1">débutant</option>
+                            <option value="2">intermédiaire</option>
+                            <option value="3">avancé</option>
+                        </select>
+                        <p *ngIf="difficulte.invalid && difficulte.touched" class="text-danger" >le champs cin est obligatoire </p>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-lg-2"></div>
+                 <div class="col-lg-8" #ettiquette>
+
+                 </div>
+                 <div class="col-lg-2"></div> 
+                </div>
+              
+               
+                <div class="form-group">
+                    <label for="Cin_Candidat" class="col-md-3 control-label">Mots cle</label>
+                    <div class="col-md-6">
+                        <input type="text" ngModel #cin_Candidat="ngModel" class="form-control input-sm" name="Mots_Cle" placeholder="Votre Numero de Cin" >
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-success btn-sm" (click)="ajouter_mot(cin_Candidat.value)">Ajouter Mot</button>
+                    </div>
+                </div>
+               
+              <!-- <div class="form-group">
+                    <label  for="Photo_Candidat" class="col-md-3 control-label">Photo</label >
+                    <div class="col-md-9">
+                        <input type="file" id="" class="form-control" name="Photo_Candidat" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Cv_Candidat" class="col-md-3 control-label">Cv</label>
+                    <div class="col-md-9">
+                        <input type="file" id="" class="form-control" name="Cv_Candidat" ngModel>
+                    </div>
+                </div>--> 
+              
+           
+
+                <div class="form-group">
+                    <!-- Button -->                                        
+                    <div class="col-md-offset-3 col-md-9">
+                        <button [disabled]="f.invalid" type="submit" class="btn btn-success col-md-12"><i class="icon-hand-right"></i>Enregistrer</button>
+                        
+                    </div>
+                </div>
+            </form>
+         </div>
+    </div>
+
+
+
+
+</div> 
+<div class="col-md-2"></div>
+</div>
+<br>
+<br>

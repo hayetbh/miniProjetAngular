@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+<div class="panel panel-info">
+    <div class="panel-heading">
+    
+        <div class="panel-title">{{formation.Titre}}</div>
+    </div>  
+    <div class="panel-body" >
+      
+        <p>{{formation.Description}}</p>
+
+        <h3 style="color: black;">Les Session</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Date debut</th>
+        <th scope="col">Date fin</th>
+        <th scope="col">formateur</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sess of session_des_formations">
+        <th scope="row">{{sess.date_debut}}</th>
+        <td>{{sess.date_fin}}</td>
+        <td>{{sess.formateur.name}}</td>
+        <td><button type="button" class="btn btn-primary btn-sm" (click)="inscription(sess.id_formateur)">Inscri</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+     </div>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>

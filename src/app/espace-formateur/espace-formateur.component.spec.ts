@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EspaceFormateurComponent } from './espace-formateur.component';
+
+describe('EspaceFormateurComponent', () => {
+  let component: EspaceFormateurComponent;
+  let fixture: ComponentFixture<EspaceFormateurComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EspaceFormateurComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EspaceFormateurComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

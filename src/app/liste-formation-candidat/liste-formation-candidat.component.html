@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+<div class="panel panel-info">
+    <div class="panel-heading">
+    
+        <div class="panel-title">Liste Des Formation</div>
+    </div>  
+    <div class="panel-body" >
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Titre Formation</th>
+        <th scope="col">Difficulte</th>
+        <th scope="col">Date inscription</th>
+        <th scope="col">Date Debut</th>
+        <th scope="col">Date fin</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sess of ListeDesFormation">
+        <th scope="row">{{sess.titre}}</th>
+        <td>{{sess.diff}}</td>
+        <td>{{sess.date_inscription | date:'yyyy-MM-dd' }}</td>
+        <td>{{sess.date_debut}}</td>
+        <td>{{sess.date_fin}}</td>
+    
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+     </div>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>
